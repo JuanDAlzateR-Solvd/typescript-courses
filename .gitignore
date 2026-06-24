@@ -1,0 +1,28 @@
+# Course slide decks
+*.pdf
+
+# macOS
+.DS_Store
+
+# Node.js
+node_modules/
+
+# TypeScript build output
+dist/
+build/
+*.js.map
+*.d.ts
+
+# Playwright test output
+test-results/
+playwright-report/
+.playwright/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Editor directories (uncomment as needed)
+# .vscode/
+# .idea/

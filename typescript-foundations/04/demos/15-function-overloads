@@ -1,0 +1,33 @@
+function checkoutBook(id: number): { id: number; dueDate: Date };
+function checkoutBook(title: string): { title: string; author: string; dueDate: Date };
+
+function checkoutBook(param: number | string) {
+  if (typeof param === "number") {
+    return { id: param, dueDate: new Date(Date.now() + 7 * 86400000) }; // 7 days from now
+  } else {
+    return { title: param, author: "Unknown", dueDate: new Date(Date.now() + 7 * 86400000) };
+  }
+}
+
+checkoutBook(101);
+checkoutBook("The Time Machine");
+
+
+
+// union version that doesn't use function overloads
+function checkoutBookUnionReturnType(param: number | string): { id: number; dueDate: Date } | { title: string; author: string; dueDate: Date; };
+
+function checkoutBookUnionReturnType(param: number | string) {
+  if (typeof param === "number") {
+    return { id: param, dueDate: new Date(Date.now() + 7 * 86400000) }; // 7 days from now
+  } else {
+    return { title: param, author: "Unknown", dueDate: new Date(Date.now() + 7 * 86400000) };
+  }
+}
+
+const bookById = checkoutBookUnionReturnType(101); // union version needs to check which type gets returned
+if("id" in bookById) {
+  console.log(bookById.dueDate);
+} else if("title" in bookById) {
+  console.log(bookById.title);
+}

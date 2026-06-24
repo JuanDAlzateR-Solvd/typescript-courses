@@ -1,0 +1,13 @@
+// Sample tsconfig.json
+{
+  "compilerOptions": {
+    "noImplicitAny": false, // This overrides the option set by strict.  Switch back to true to turn it back on
+    "target": "es2024",
+    "strict": true,
+    "outDir": "dist",
+    "listEmittedFiles": true,
+  },
+  "watchOptions": {
+    "excludeFiles": [], // Add strings to this array to exclude watched files
+  }
+}
